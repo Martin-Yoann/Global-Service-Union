@@ -1,0 +1,73 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+/**
+ * --------------------------------------------------
+ * Core User
+ * --------------------------------------------------
+ */
+model User {
+  id        String    @id @default(cuid())
+  email     String?   @unique
+  name      String?
+  avatarUrl String?
+  createdAt DateTime  @default(now())
+
+  messages  Message[]
+  replies   Reply[]
+  likes     Like[]
+}
+
+model Message {
+  id        String    @id @default(cuid())
+  userId    String
+  user      User      @relation(fields: [userId], references: [id])
+  userName  String
+  avatarUrl String?
+  text      String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  isDeleted Boolean   @default(false)
+
+  replies   Reply[]
+  likes     Like[]
+}
+
+model Reply {
+  id        String    @id @default(cuid())
+  messageId String
+  message   Message   @relation(fields: [messageId], references: [id])
+  userId    String
+  user      User      @relation(fields: [userId], references: [id])
+  userName  String
+  avatarUrl String?
+  text      String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  isDeleted Boolean   @default(false)
+
+  likes     Like[]
+}
+
+model Like {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+
+  messageId String?
+  message   Message? @relation(fields: [messageId], references: [id])
+
+  replyId   String?
+  reply     Reply?   @relation(fields: [replyId], references: [id])
+
+  createdAt DateTime @default(now())
+
+  @@unique([userId, messageId])
+  @@unique([userId, replyId])
+}

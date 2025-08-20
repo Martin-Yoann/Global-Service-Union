@@ -1,0 +1,29 @@
+/* 📁 src/app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* slick carousel 样式 */
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+/* 配置字体样式 */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=Montserrat:wght@600&family=Inter&display=swap');
+/* 设置全局字体 */
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-rgb: 0, 0, 0;
+  }
+}
+html,body {
+  margin: 0;
+  padding: 0;
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  font-size: 16px;
+}

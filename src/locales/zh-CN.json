@@ -1,0 +1,49 @@
+{
+  "navigation": {
+    "Community": "社区",
+    "Join Us": "加入我们",
+    "Donate": "捐赠"
+  },
+  "auth": {
+    "Sign In": "登录",
+    "Sign Up": "注册",
+    "Login": "登录",
+    "Register": "注册",
+    "Forgot Password": "忘记密码",
+    "Sign in with Google": "使用谷歌登录"
+  },
+  "dashboard": {
+    "Member Dashboard": "会员中心",
+    "Welcome back, {{name}}!": "欢迎回来，{{name}}！",
+    "Last login: {{date}}": "上次登录：{{date}}",
+    "My Projects": "我的项目",
+    "Union Resources": "联盟资源",
+    "View and manage your service projects": "查看和管理您的服务项目",
+    "Access member-only resources": "访问会员专属资源"
+  },
+  "access": {
+    "You must be signed in to view this page": "您需要登录才能访问此页面",
+    "Need to sign in to access this page": "需要登录才能访问此页面",
+    "Please sign in or register": "请登录或注册"
+  },
+  "common": {
+    "Profile": "个人资料",
+    "Language": "语言",
+    "Delete": "删除",
+    "Reply": "回复",
+    "Send": "发送",
+    "Like": "点赞",
+    "Comments": "评论"
+  },
+  "messages": {
+    "Delete this message?": "确定删除这条留言吗？",
+    "Delete this reply?": "确定删除这条回复吗？",
+    "Write a reply...": "回复...",
+    "You liked this": "你已点赞"
+  },
+  "errors": {
+    "Page Not Found": "页面未找到",
+    "Access Denied": "没有访问权限",
+    "This field is required": "此字段为必填项"
+  }
+}

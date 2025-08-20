@@ -1,0 +1,49 @@
+{
+  "navigation": {
+    "Community": "Community",
+    "Join Us": "Join Us",
+    "Donate": "Donate"
+  },
+  "auth": {
+    "Sign In": "Sign In",
+    "Sign Up": "Sign Up",
+    "Login": "Login",
+    "Register": "Register",
+    "Forgot Password": "Forgot Password",
+    "Sign in with Google": "Sign in with Google"
+  },
+  "dashboard": {
+    "Member Dashboard": "Member Dashboard",
+    "Welcome back, {{name}}!": "Welcome back, {{name}}!",
+    "Last login: {{date}}": "Last login: {{date}}",
+    "My Projects": "My Projects",
+    "Union Resources": "Union Resources",
+    "View and manage your service projects": "View and manage your service projects",
+    "Access member-only resources": "Access member-only resources"
+  },
+  "access": {
+    "You must be signed in to view this page": "You must be signed in to view this page",
+    "Need to sign in to access this page": "Need to sign in to access this page",
+    "Please sign in or register": "Please sign in or register"
+  },
+  "common": {
+    "Profile": "Profile",
+    "Language": "Language",
+    "Delete": "Delete",
+    "Reply": "Reply",
+    "Send": "Send",
+    "Like": "Like",
+    "Comments": "Comments"
+  },
+  "messages": {
+    "Delete this message?": "Are you sure you want to delete this message?",
+    "Delete this reply?": "Are you sure you want to delete this reply?",
+    "Write a reply...": "Write a reply...",
+    "You liked this": "You liked this"
+  },
+  "errors": {
+    "Page Not Found": "Page Not Found",
+    "Access Denied": "Access Denied",
+    "This field is required": "This field is required"
+  }
+}
