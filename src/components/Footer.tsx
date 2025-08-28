@@ -10,8 +10,14 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10 md:gap-20">
         {/* 1. 联盟 Logo + 简介 */}
         <div className="flex-1 max-w-xs flex flex-col items-start">
-          <h2 className="text-3xl font-extrabold mb-2 tracking-wide">Global Service Union</h2>
-          <p className="text-gray-400 text-sm leading-relaxed">
+          {/* <h2 className="text-3xl font-extrabold mb-2 tracking-wide">Global Service Union</h2> */}
+          <img
+            src="/GBAEC logo-footer.svg"
+            alt="GBAEC Logo"
+            className="w-full max-w-[125px] sm:max-w-[125px] md:max-w-[125px] h-auto object-contain"
+          />
+
+          <p className="text-gray-400 text-sm leading-relaxed mt-4">
             Uniting Service Businesses Across Borders
           </p>
         </div>
@@ -29,7 +35,10 @@ export default function Footer() {
                 { href: "/blog", label: "Blog" },
               ].map(({ href, label }) => (
                 <li key={href}>
-                  <Link href={href} className="hover:text-white transition-colors duration-200">
+                  <Link
+                    href={href}
+                    className="hover:text-white transition-colors duration-200"
+                  >
                     {label}
                   </Link>
                 </li>
@@ -46,7 +55,10 @@ export default function Footer() {
                 { href: "/dashboard", label: "Alliance Center" },
               ].map(({ href, label }) => (
                 <li key={href}>
-                  <Link href={href} className="hover:text-white transition-colors duration-200">
+                  <Link
+                    href={href}
+                    className="hover:text-white transition-colors duration-200"
+                  >
                     {label}
                   </Link>
                 </li>
@@ -61,14 +73,20 @@ export default function Footer() {
             md:-mr-24 lg:-mr-32
           "
         >
-          <h3 className="text-lg font-semibold mb-4 text-white">Contact Info</h3>
+          <h3 className="text-lg font-semibold mb-4 text-white">
+            Contact Info
+          </h3>
           <p className="leading-relaxed">
-            123 Global Service Ave.<br />
+            123 Global Service Ave.
+            <br />
             New York, NY 10001
           </p>
           <p>
             Phone:{" "}
-            <a href="tel:+1234567890" className="hover:text-white transition-colors duration-200">
+            <a
+              href="tel:+1234567890"
+              className="hover:text-white transition-colors duration-200"
+            >
               +1 (234) 567-890
             </a>
           </p>

@@ -2,23 +2,17 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+
 export default function AboutPage() {
   const stats = [
-    { label: "Global Clients", value: 1200 },
-    { label: "Warehouses", value: 85 },
-    { label: "Countries Covered", value: 35 },
+    { label: "Global Clients", value: 30 },
+    { label: "Countries Covered", value: 5 },
   ];
-  const teamMembers = [
-    { name: "Alice Johnson", role: "CEO", img: "https://img0.baidu.com/it/u=1595607778,3757335436&fm=253&fmt=auto&app=138&f=JPEG?w=285&h=285" },
-    { name: "David Wang", role: "CTO", img: "https://img0.baidu.com/it/u=1595607778,3757335436&fm=253&fmt=auto&app=138&f=JPEG?w=285&h=285" },
-    { name: "Sophia Chen", role: "Marketing Head", img: "https://img0.baidu.com/it/u=1595607778,3757335436&fm=253&fmt=auto&app=138&f=JPEG?w=285&h=285" },
-  ];
-  const cardVariants = {
-    hidden: { opacity: 0, y: 30, scale: 0.95 },
-    visible: { opacity: 1, y: 0, scale: 1 },
-  };
+
+
   return (
     <main className="bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-black text-gray-800 dark:text-gray-100 min-h-screen pt-24 pb-16">
+
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0, y: 50 }}
@@ -28,13 +22,17 @@ export default function AboutPage() {
         className="text-center max-w-4xl mx-auto px-4"
       >
         <h1 className="text-4xl md:text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
-          About Global Service Union
+          About US
         </h1>
-        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-        Our mission :Connect global merchants, build efficient docking bridges, ,make global business cooperation easier.
+        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-4xl mx-auto">
+        Global Business Association & Education Center is a non-profit organization duly established under the Texas Business Organizations Code and the U.S. 
+        Internal Revenue Code, dedicated to promoting international business education, philanthropic initiatives, and cross-cultural exchange. 
+        The platform operates on a non-profit basis, with funding derived from non-profit organizations and public donations.
+
         </p>
-        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-        our vision: Connecting global business, To draw a prosperous future.
+        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-4xl mx-auto">
+        No part of the net earnings of the organization shall inure to the benefit of any director, officer, member, or private individual.
+In the event of dissolution, the assets of the organization shall be distributed to one or more organizations qualified as tax-exempt under the U.S. Internal Revenue Code, to be used for exempt purposes, or to the federal, state, or local government for public use.
         </p>
       </motion.section>
 
@@ -64,7 +62,7 @@ export default function AboutPage() {
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.8 }}
         viewport={{ once: true }}
-        className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-16 px-4"
+        className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto mt-16 px-4"
       >
         {stats.map((stat, index) => (
           <StatCard key={index} label={stat.label} value={stat.value} />
@@ -81,15 +79,15 @@ export default function AboutPage() {
       >
         <InfoCard
           title="Our Mission"
-          text="Our mission :Connect global merchants, build efficient docking bridges, ,make global business cooperation easier."
+          text="Our mission: To connect global businesses, empower seamless collaboration, and simplify global partnerships."
         />
         <InfoCard
           title="Our Vision"
-          text="our vision: Connecting global business, To draw a prosperous future."
+          text="Our Vision: A globally connected business ecosystem enabling shared prosperity."
         />
       </motion.section>
 
-      {/* Timeline Section */}
+      {/* Timeline Section (Tabs) */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -100,62 +98,13 @@ export default function AboutPage() {
         <h2 className="text-3xl font-bold mb-8 text-center text-indigo-600 dark:text-indigo-400">
           Our Story
         </h2>
-        <Timeline />
+        <TimelineTabs />
       </motion.section>
-
-      {/* Team Section */}
-      <motion.section
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
-      className="max-w-6xl mx-auto px-4 mt-20"
-    >
-      <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="text-3xl font-bold text-center mb-10 text-gray-800 dark:text-gray-100"
-      >
-        Meet Our Team
-      </motion.h2>
-
-      <div className="grid md:grid-cols-3 gap-10">
-        {teamMembers.map((member, index) => (
-          <motion.div
-            key={member.name}
-            variants={cardVariants}
-            initial="hidden"
-            whileInView="visible"
-            transition={{ duration: 0.5, delay: index * 0.2 }}
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.05, y: -5 }} // 悬停时放大和轻微上浮
-            className="text-center bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow"
-          >
-            <motion.div
-              whileHover={{ scale: 1.1, rotate: 2 }} // 图片悬停动态效果
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <Image
-                src={member.img}
-                alt={member.name}
-                width={120}
-                height={120}
-                className="rounded-full mx-auto shadow-lg mb-10"
-              />
-            </motion.div>
-            <h3 className="mt-10 text-xl font-semibold">{member.name}</h3>
-            <p className="text-indigo-600">{member.role}</p>
-          </motion.div>
-        ))}
-      </div>
-    </motion.section>
     </main>
   );
 }
 
-/* ----------- 子组件保持不变 ----------- */
+/* ---------------- 子组件 ---------------- */
 function StatCard({ label, value }: { label: string; value: number }) {
   const [count, setCount] = useState(0);
 
@@ -189,32 +138,46 @@ function InfoCard({ title, text }: { title: string; text: string }) {
   );
 }
 
-function Timeline() {
+/* ---------------- TimelineTabs ---------------- */
+function TimelineTabs() {
   const events = [
-    { year: "2020", text: "The platform is officially established. Global Service Union was officially established in March 2020.In the initial stage, we will gather over 50 cross-border trade enterprises with the core goal of connecting global resources and assisting small and medium-sized enterprises in going global. " },
-    { year: "2021", text: "Technology upgrade By introducing intelligent matching algorithms, the efficiency of order matching has been improved by 40%, the interception rate of false information has reached 98%, and the user retention period has been extended from 3 months to 12 months" },
-    { year: "2022", text: "Globalization expansion Expand customer base in countries such as China, the United States, and the United Kingdom, covering the Asian and South American markets, and adding 1000 new merchants throughout the year." },
-    { year: "2023", text: "Technology driven change Connected to the China UnionPay cross-border payment system, supporting real-time clearing of 46 currencies, shortening settlement cycles, and reducing transaction fees by 30%." },
-    { year: "2024", text: "scale development The platform has accumulated over 10000 registered merchants, covering more than 20 industries such as fast-moving consumer goods, household goods, and digital services." },
-    { year: "2025", text: "The future has arrived In the future, we will promote the platform's user credit scoring system and establish industry data sharing standards." },
+    { year: "2022", text: "The Spark of Collaboration The vision for the Global Service Alliance took shape in 2022. By bringing together multiple cross-border trading companies, we discovered powerful synergies across different sectors. These early collaborations—where businesses supported each other and achieved mutual growth—inspired our foundational concept." },
+    { year: "2023", text: "Official Launch The alliance was formally established in 2023 with a clear mission: to connect global resources and empower small and medium-sized enterprises in expanding internationally." },
+    { year: "2024", text: "Expanding Reach and Membership We extended our network into key international markets, including China, the United States, Canada, and the United Kingdom. Within a year, our community grew to include over 20 dedicated members. " },
+    { year: "2025", text: "Innovation and Integrity We’re continuously enhancing our processes and protocols, achieving a false information interception rate of nearly 90% and increasing user retention from 3 to 10 months. We’re also developing a user credit scoring system and establishing industry-wide data-sharing standards—paving the way for the future of global business." },
   ];
 
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
-    <div className="relative border-l-4 border-indigo-500 pl-6">
-      {events.map((event, i) => (
-        <motion.div
-          key={i}
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ delay: i * 0.2 }}
-          viewport={{ once: true }}
-          className="mb-8"
-        >
-          <div className="absolute -left-4 w-6 h-6 bg-indigo-500 rounded-full border-4 border-white"></div>
-          <p className="text-indigo-600 font-bold">{event.year}</p>
-          <p className="text-gray-700 dark:text-gray-300">{event.text}</p>
-        </motion.div>
-      ))}
+    <div className="flex flex-col items-center">
+      {/* Tabs */}
+      <div className="flex flex-wrap justify-center gap-3 mb-8">
+        {events.map((event, i) => (
+          <button
+            key={i}
+            onClick={() => setActiveIndex(i)}
+            className={`px-4 py-2 rounded-full text-sm font-semibold transition ${
+              activeIndex === i
+                ? "bg-indigo-600 text-white shadow-md"
+                : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-indigo-100 dark:hover:bg-indigo-800"
+            }`}
+          >
+            {event.year}
+          </button>
+        ))}
+      </div>
+
+      {/* 内容 */}
+      <motion.div
+        key={activeIndex}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg max-w-2xl text-center"
+      >
+        <p className="text-gray-700 dark:text-gray-300">{events[activeIndex].text}</p>
+      </motion.div>
     </div>
   );
 }

@@ -6,7 +6,7 @@ export default function Mission() {
   return (
     <section
       aria-labelledby="mission-title"
-      className="bg-white py-16 px-6 md:px-12 text-center"
+      className="bg-[#DFEAFF] py-20 px-6 md:px-12 text-center !mt-0"
     >
       <motion.h2
         id="mission-title"
@@ -26,9 +26,7 @@ export default function Mission() {
         viewport={{ once: true, amount: 0.3 }}
         transition={{ delay: 0.3, duration: 0.8 }}
       >
-        Global Service Union unites service-based organizations across borders to
-        foster transparency, collaboration, and growth. We aim to build a
-        sustainable and equitable service ecosystem.
+        To connect global businesses, empower seamless collaboration, and simplify global partnerships.
       </motion.p>
     </section>
   );

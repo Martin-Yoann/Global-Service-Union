@@ -8,60 +8,60 @@ import "slick-carousel/slick/slick-theme.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 type SlideContent = {
-  type: "h1" | "h3" | "p" | "b"; // ✅ 新增 h3
+  type: "h1" | "h3" | "p" | "b";
   text: string;
 };
 
 const slides: { title: SlideContent[]; image: string }[] = [
   {
     title: [
-      { type: "h1", text: "Global Business Union" },
+      { type: "h1", text: "Global Business Association&Education Center" },
       { type: "b", text: "Collaborating Freely, operating Independently" },
-      {
-        type: "p",
-        text: "Global Business Union, it is an open collaboration platform that connects global business partners. Members are free to discuss business needs, connect resources, and seek cooperation. We are committed to building efficient bridges for global business collaboration.",
-      },
     ],
     image: "/banner1.png",
   },
   {
-    title: [{ type: "h3", text: "Collaborating Freely, Operating Independently." }],
+    title: [
+      {
+        type: "b",
+        text: "We are a duly established non-profit organization under Section 501(c)(3)...",
+      },
+    ],
     image: "/banner2.png",
   },
   {
     title: [
-      { type: "h3", text: "In community communication, please refrain from openly discussing trade secrets." },
-      { type: "h3", text: "The responsibility related to cooperation shall be borne by the members themselves." },
+      {
+        type: "b",
+        text: "As an open platform connecting global business partners...",
+      },
     ],
     image: "/banner3.png",
   },
 ];
 
-// ✅ 样式映射，统一控制字体大小
 const textStyles: Record<SlideContent["type"], string> = {
-  h1: "text-[45px] font-bold", // h1 45px
-  h3: "text-[30px] font-semibold", // ✅ h3 35px
-  b: "text-[24px] font-semibold", // b 24px
-  p: "text-[18px] font-normal max-w-[50%] mx-auto text-center"
-
+  h1: "text-[45px] font-bold",
+  h3: "text-[30px] font-semibold",
+  b: "text-[24px] font-semibold",
+  p: "text-[18px] font-normal max-w-[50%] mx-auto text-center",
 };
 
-// 自定义箭头
 const PrevArrow = ({ onClick }: any) => (
   <div
-    className="absolute top-1/2 -translate-y-1/2 left-4 z-20 text-white bg-black/50 p-3 rounded-full cursor-pointer hover:bg-white hover:text-black transition"
+    className="absolute top-1/2 -translate-y-1/2 left-12 z-20 cursor-pointer group"
     onClick={onClick}
   >
-    <FaChevronLeft />
+    <div className="w-14 h-14 border-l border-t border-white transform -rotate-45 group-hover:border-indigo-400 transition-all"></div>
   </div>
 );
 
 const NextArrow = ({ onClick }: any) => (
   <div
-    className="absolute top-1/2 -translate-y-1/2 right-4 z-20 text-white bg-black/50 p-3 rounded-full cursor-pointer hover:bg-white hover:text-black transition"
+    className="absolute top-1/2 -translate-y-1/2 right-12 z-20 cursor-pointer group"
     onClick={onClick}
   >
-    <FaChevronRight />
+    <div className="w-14 h-14 border-r border-t border-white transform rotate-45 group-hover:border-indigo-400 transition-all"></div>
   </div>
 );
 
@@ -74,20 +74,18 @@ const sliderSettings = {
   slidesToShow: 1,
   slidesToScroll: 1,
   arrows: true,
-  accessibility: true,
-  focusOnSelect: false,
   prevArrow: <PrevArrow />,
   nextArrow: <NextArrow />,
 };
 
 export default function HomeSlider() {
   return (
-    <div className="overflow-x-hidden">
-      <Slider {...sliderSettings}>
+    <div className="overflow-x-hidden m-0 p-0"> {/* ✅ 去掉外层 margin/padding */}
+      <Slider {...sliderSettings} className="m-0 p-0"> {/* ✅ 去掉 Slider 内边距 */}
         {slides.map((slide, idx) => (
           <div
             key={idx}
-            className="relative h-[100dvh] md:h-[800px] max-h-screen"
+            className="relative h-screen w-full m-0 p-0" // ✅ 直接占满整个屏幕高度
           >
             <Image
               src={slide.image}
@@ -102,21 +100,15 @@ export default function HomeSlider() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="text-white
-                text-center
-                leading-relaxed md:leading-loose
-                max-w-3/4
-                space-y-4
-                "
+                className="text-white text-center leading-relaxed md:leading-loose max-w-[75%] space-y-4" // ✅ 修正 max-w
               >
                 {slide.title.map((line, i) => {
-                  // ✅ 根据 type 决定标签类型
                   const Tag =
                     line.type === "h1"
                       ? "h1"
                       : line.type === "h3"
                       ? "h3"
-                      : "p"; // b 也用 p 标签
+                      : "p";
                   return (
                     <Tag key={i} className={textStyles[line.type]}>
                       {line.text}

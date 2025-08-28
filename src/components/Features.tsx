@@ -5,18 +5,18 @@ import { FaGlobe, FaHandshake, FaMedal } from "react-icons/fa";
 
 const features = [
   {
-    title: "Cross-border Collaboration",
-    description: "Connecting organizations across continents for mutual benefit.",
+    title: "Open Collaboration",
+    // description: "Connecting organizations across continents for mutual benefit.",
     icon: FaGlobe,
   },
   {
-    title: "Transparency & Trust",
-    description: "Ensuring openness and accountability among members.",
+    title: "Knowledge Sharing & Global Growth",
+    // description: "Ensuring openness and accountability among members.",
     icon: FaHandshake,
   },
   {
-    title: "Global Recognition",
-    description: "Boosting the visibility and impact of service alliances worldwide.",
+    title: "Value Co-creation",
+    // description: "Boosting the visibility and impact of service alliances worldwide.",
     icon: FaMedal,
   },
 ];
