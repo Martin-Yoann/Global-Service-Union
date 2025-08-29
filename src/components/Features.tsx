@@ -1,28 +1,29 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants, Transition } from "framer-motion";
 import { FaGlobe, FaHandshake, FaMedal } from "react-icons/fa";
 
+// Features 数据
 const features = [
   {
     title: "Open Collaboration",
-    // description: "Connecting organizations across continents for mutual benefit.",
+    description: "Connecting organizations across continents for mutual benefit.",
     icon: FaGlobe,
   },
   {
     title: "Knowledge Sharing & Global Growth",
-    // description: "Ensuring openness and accountability among members.",
+    description: "Ensuring openness and accountability among members.",
     icon: FaHandshake,
   },
   {
     title: "Value Co-creation",
-    // description: "Boosting the visibility and impact of service alliances worldwide.",
+    description: "Boosting the visibility and impact of service alliances worldwide.",
     icon: FaMedal,
   },
 ];
 
 // 动画 variants
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: {},
   visible: {
     transition: {
@@ -30,10 +31,20 @@ const containerVariants = {
     },
   },
 };
-const itemVariants = {
+
+// 修复 TS 类型问题，ease 使用数组形式并指定 Transition 类型
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: ["easeOut"],
+    } as Transition,
+  },
 };
+
 export default function Features() {
   return (
     <section
@@ -51,6 +62,7 @@ export default function Features() {
           What makes our alliance stand out
         </p>
       </div>
+
       <motion.div
         className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
         variants={containerVariants}
@@ -63,7 +75,7 @@ export default function Features() {
             key={idx}
             className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 cursor-default flex flex-col items-center text-center"
             variants={itemVariants}
-            tabIndex={0} // 让卡片可聚焦，提高无障碍
+            tabIndex={0} // 可聚焦
             role="region"
             aria-labelledby={`feature-title-${idx}`}
           >

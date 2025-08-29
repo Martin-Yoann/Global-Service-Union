@@ -77,9 +77,9 @@ export default function Footer() {
             Contact Info
           </h3>
           <p className="leading-relaxed">
-            123 Global Service Ave.
+              1101 E Arapaho Rd
             <br />
-            New York, NY 10001
+              Richardson, TX 75081
           </p>
           <p>
             Phone:{" "}

@@ -1,5 +1,5 @@
 // src/components/ui/button.tsx
-import React, { ReactNode, isValidElement } from "react";
+import React, { ReactNode, isValidElement, ReactElement } from "react";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   asChild?: boolean;
@@ -25,8 +25,9 @@ export function Button({
   const combinedClasses = `${baseClasses}${variantClasses} ${className}`.trim();
 
   if (asChild && isValidElement(children)) {
-    const childClassName = children.props.className || "";
-    return React.cloneElement(children, {
+    const child = children as ReactElement<{ className?: string }>;
+    const childClassName = child.props.className || "";
+    return React.cloneElement(child, {
       ...props,
       className: `${childClassName} ${combinedClasses}`.trim(),
     });

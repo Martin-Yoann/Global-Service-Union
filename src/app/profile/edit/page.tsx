@@ -24,10 +24,15 @@ export default function EditProfilePage() {
   async function handleSave() {
     try {
       // ✅ update text fields
+      if (!user) {
+        throw new Error("User not found");
+      }
+      
       await user.update({
         username,
         firstName,
       });
+      
 
       // ✅ update avatar if uploaded
       if (avatarFile) {

@@ -24,7 +24,7 @@ const slides: { title: SlideContent[]; image: string }[] = [
     title: [
       {
         type: "b",
-        text: "We are a duly established non-profit organization under Section 501(c)(3)...",
+        text: "We are a duly established non-profit organization under Section 501(c)(3) of the U.S. Internal Revenue Code, dedicated to advancing international business education, philanthropic initiatives, and cross-cultural exchange. Through conferences, seminars, and a comprehensive online resource library, we empower professionals to grasp industry trends, enhance management skills, and build a global professional network.",
       },
     ],
     image: "/banner2.png",
@@ -33,7 +33,7 @@ const slides: { title: SlideContent[]; image: string }[] = [
     title: [
       {
         type: "b",
-        text: "As an open platform connecting global business partners...",
+        text: "As an open platform connecting global business partners, with no subordination among members, we encourage the free exchange of needs, integration of resources, and establishment of collaborations. The organization's mission is to facilitate efficient and equitable global business collaboration.In community communication, please refrain from openly discussing trade secrets.The responsibility related to cooperation shall be borne by the members themselves.",
       },
     ],
     image: "/banner3.png",
