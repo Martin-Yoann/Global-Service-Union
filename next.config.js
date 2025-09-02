@@ -2,13 +2,10 @@
 const nextConfig = {
     reactStrictMode: true,
     eslint: {
-      ignoreDuringBuilds: true, // 构建时忽略 ESLint 错误
+      ignoreDuringBuilds: true, // 忽略 ESLint 错误
     },
     typescript: {
-      ignoreBuildErrors: true, // 构建时忽略 TS 错误
-    },
-    experimental: {
-      instrumentationHook: true, // next-on-pages 需要
+      ignoreBuildErrors: true, // 忽略 TS 错误
     },
   };
   
