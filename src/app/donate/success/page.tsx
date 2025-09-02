@@ -7,7 +7,7 @@ export default function DonateSuccess() {
     <main className="min-h-screen flex flex-col items-center justify-center bg-green-50 px-6 py-12">
       <h1 className="text-4xl font-bold text-green-700 mb-4">Thank You for Your Donation!</h1>
       <p className="text-lg text-green-800 mb-8 max-w-xl text-center">
-        Your generous contribution helps support the mission of Global Service Union.
+        Your generous contribution helps support the mission of Business Association .
         We truly appreciate your support.
       </p>
       <Link

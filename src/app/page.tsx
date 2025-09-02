@@ -10,7 +10,10 @@ export default function HomePage() {
       <Mission />
       <Features />
       <JoinUs />
-      <Partners />
+      {/* <Partners /> 
+      
+      主页尾部合作伙伴logo展示，暂时隐藏
+      */}
     </main>
   );
 }

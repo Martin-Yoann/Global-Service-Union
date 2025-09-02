@@ -104,7 +104,7 @@ export default function Footer() {
 
       {/* 版权信息 */}
       <div className="mt-12 text-center text-gray-500 text-xs select-none tracking-wide">
-        © {year} Global Service Union. All rights reserved.
+        © {year} Business Association .  All rights reserved.
       </div>
     </footer>
   );
