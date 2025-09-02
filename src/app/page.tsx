@@ -2,6 +2,8 @@ import HomeSlider from "../components/HomeSlider";
 import Mission from "../components/Mission";
 import Features from "..//components/Features";
 import JoinUs from "../components/JoinUs";
+export const runtime = 'edge';
+
 import Partners from "../components/Partners";
 export default function HomePage() {
   return (

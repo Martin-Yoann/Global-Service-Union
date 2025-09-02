@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "../../../lib/prisma";
 import { getAuth } from "@clerk/nextjs/server";
-
+export const runtime = 'edge';
 // ------------------------
 // 获取所有留言
 // ------------------------
