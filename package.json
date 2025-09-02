@@ -8,7 +8,9 @@
     "start": "next start",
     "prepare": "husky install",
     "lint": "next lint",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "pages:build": "npx @cloudflare/next-on-pages build",
+    "pages:deploy": "npx wrangler pages deploy .vercel/output/static"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
