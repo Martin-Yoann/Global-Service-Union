@@ -1,5 +1,7 @@
 import { currentUser } from "@clerk/nextjs/server";
 import Image from "next/image";
+export const runtime = 'edge';
+
 import EditProfileButton from "../../components/EditProfileButton";
 
 export default async function ProfilePage() {

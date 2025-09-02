@@ -1,6 +1,6 @@
 // app/api/create-checkout-session/route.ts
-import Stripe from "stripe";
 export const runtime = 'edge';
+import Stripe from "stripe";
 const stripeKey = process.env.STRIPE_SECRET_KEY;
 
 export async function POST(req: Request) {

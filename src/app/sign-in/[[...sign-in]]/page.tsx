@@ -1,4 +1,5 @@
 // src/app/(auth)/sign-in/[[...sign-in]]/page.tsx
+export const runtime = 'edge';
 import { SignIn } from '@clerk/nextjs'
 
 export default function SignInPage() {

@@ -1,4 +1,5 @@
 import { currentUser } from "@clerk/nextjs/server";
+export const runtime = 'edge';
 
 export default async function ProjectsPage() {
   const user = await currentUser();

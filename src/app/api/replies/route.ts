@@ -1,8 +1,8 @@
 // src/app/api/replies/route.ts
+export const runtime = 'edge';
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "../../../lib/prisma";
 import { getAuth } from "@clerk/nextjs/server"; // ✅ 修改导入
-export const runtime = 'edge';
 export async function POST(req: NextRequest) {
   try {
     // 1️⃣ 获取当前登录用户

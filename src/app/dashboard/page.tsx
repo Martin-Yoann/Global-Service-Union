@@ -1,4 +1,5 @@
 // src/app/dashboard/page.tsx
+export const runtime = 'edge';
 import { currentUser } from "@clerk/nextjs/server";
 import Link from "next/link";
 import Image from "next/image";

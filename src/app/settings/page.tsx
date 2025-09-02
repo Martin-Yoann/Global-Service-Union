@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 import { currentUser } from "@clerk/nextjs/server";
 
 export default async function SettingsPage() {
