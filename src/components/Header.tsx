@@ -48,7 +48,7 @@ export default function Header() {
         <Link href="/" className="block">
           <span className="sr-only">Global Service Union</span>
           <img
-            src="logo_header.svg"
+            src="/logo_header.svg"
             alt="Global Service Union Logo"
             className="w-32 h-auto"
             width={192}

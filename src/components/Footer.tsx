@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="flex-1 max-w-xs flex flex-col items-start">
           {/* <h2 className="text-3xl font-extrabold mb-2 tracking-wide">Global Service Union</h2> */}
           <img
-            src="logo-footer.svg"
+            src="/logo-footer.svg"
             alt="GBAEC Logo"
             className="w-full max-w-[125px] sm:max-w-[125px] md:max-w-[125px] h-auto object-contain"
           />
