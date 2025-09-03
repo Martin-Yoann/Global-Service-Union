@@ -1,4 +1,5 @@
 // app/api/create-checkout-session/route.ts
+export const runtime = 'edge';
 import Stripe from "stripe";
 const stripeKey = process.env.STRIPE_SECRET_KEY;
 
