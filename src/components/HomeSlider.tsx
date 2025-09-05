@@ -5,7 +5,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 type SlideContent = {
   type: "h1" | "h3" | "p" | "b";
@@ -41,27 +40,27 @@ const slides: { title: SlideContent[]; image: string }[] = [
 ];
 
 const textStyles: Record<SlideContent["type"], string> = {
-  h1: "text-[45px] font-bold",
-  h3: "text-[30px] font-semibold",
-  b: "text-[24px] font-semibold",
-  p: "text-[18px] font-normal max-w-[50%] mx-auto text-center",
+  h1: "text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold",
+  h3: "text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold",
+  b: "text-base sm:text-lg md:text-xl lg:text-2xl font-semibold",
+  p: "text-sm sm:text-base md:text-lg lg:text-xl font-normal max-w-full sm:max-w-[80%] md:max-w-[60%] lg:max-w-[50%] mx-auto text-center",
 };
 
 const PrevArrow = ({ onClick }: any) => (
   <div
-    className="absolute top-1/2 -translate-y-1/2 left-12 z-20 cursor-pointer group"
+    className="absolute top-1/2 -translate-y-1/2 left-4 z-20 cursor-pointer"
     onClick={onClick}
   >
-    <div className="w-14 h-14 border-l border-t border-white transform -rotate-45 group-hover:border-indigo-400 transition-all"></div>
+    <div className="w-10 h-10 border-l border-t border-white transform -rotate-45 hover:border-indigo-400 transition-all"></div>
   </div>
 );
 
 const NextArrow = ({ onClick }: any) => (
   <div
-    className="absolute top-1/2 -translate-y-1/2 right-12 z-20 cursor-pointer group"
+    className="absolute top-1/2 -translate-y-1/2 right-4 z-20 cursor-pointer"
     onClick={onClick}
   >
-    <div className="w-14 h-14 border-r border-t border-white transform rotate-45 group-hover:border-indigo-400 transition-all"></div>
+    <div className="w-10 h-10 border-r border-t border-white transform rotate-45 hover:border-indigo-400 transition-all"></div>
   </div>
 );
 
@@ -80,13 +79,10 @@ const sliderSettings = {
 
 export default function HomeSlider() {
   return (
-    <div className="overflow-x-hidden m-0 p-0"> {/* ✅ 去掉外层 margin/padding */}
-      <Slider {...sliderSettings} className="m-0 p-0"> {/* ✅ 去掉 Slider 内边距 */}
+    <div className="overflow-x-hidden m-0 p-0">
+      <Slider {...sliderSettings} className="m-0 p-0">
         {slides.map((slide, idx) => (
-          <div
-            key={idx}
-            className="relative h-screen w-full m-0 p-0" // ✅ 直接占满整个屏幕高度
-          >
+          <div key={idx} className="relative h-screen w-full m-0 p-0">
             <Image
               src={slide.image}
               alt={`Slide ${idx + 1}`}
@@ -100,7 +96,7 @@ export default function HomeSlider() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="text-white text-center leading-relaxed md:leading-loose max-w-[75%] space-y-4" // ✅ 修正 max-w
+                className="text-white text-center leading-relaxed md:leading-loose max-w-full sm:max-w-[80%] md:max-w-[60%] lg:max-w-[50%] space-y-3"
               >
                 {slide.title.map((line, i) => {
                   const Tag =
