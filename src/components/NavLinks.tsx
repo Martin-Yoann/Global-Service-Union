@@ -5,8 +5,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 
-
-
 const links = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },
@@ -47,6 +45,7 @@ export default function NavLinks() {
           );
         })}
       </nav>
+
       {/* Mobile menu button */}
       <button
         onClick={toggleDrawer}
@@ -55,10 +54,10 @@ export default function NavLinks() {
         {isOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
 
-      {/* Mobile drawer */}
+      {/* Mobile drawer (左侧抽屉) */}
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
+        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${
+          isOpen ? 'translate-x-0' : '-translate-x-full'
         } md:hidden`}
       >
         <div className="flex items-center justify-between px-4 py-3 border-b">
